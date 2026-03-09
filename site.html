@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<title> Mon site de rêve </title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+	<div id="entete-de-page"> 
+		<p> Mon site de rêve </p>
+	</div> 
+	<table id="bloc-menu" border="1">
+	<tr>
+		<th><a href="index.html"> Accueil </a></th>
+		<th><a href="productions.html">Productions scolaires</a></th>
+		<th><a href="passions.html">Mes passions</a></th>
+		<th><a href="Videos.html">Mes vidéos</a></th>
+		<th><a href="Site.html">Mon site de rêve</a></th>
+		
+	</tr>
+	</table> <br/> 
+	<div id="contenu">
+		<h1> Mon site de rêve </h1>	
+		<a href="site.html">Accueil</a>
+		<a href="livres.html">Les livres</a>
+		<a href="musique.html">Les musiques</a>
+
+
+<h1>Bienvenue sur mon site</h1>
+ Découvre mes centres d’intérêt : la <strong>musique</strong> et <strong>les livres</strong>.  
+
+<h2>Musique pour accompagner votre lecture :</h2>
+<!--on ajoute le lien où se trouve la musique -->
+
+<div>
+
+<audio  id="zic"src="musics.mp3"></audio>
+<!--on nomme les boutons et leur statut -->
+<div>
+<a href="javascript:void(0)" onclick="changeState(0)" class="bouton hover">PLAY</a>
+<a href="javascript:void(0)" onclick="changeState(1)" class="bouton">PAUSE</a>
+<a href="javascript:void(0)" onclick="changeState(2)" class="bouton active">STOP</a>
+</div>
+<!--on écrit les variable du script -->
+<script>
+<!--on attribue valeur et fonction de chaque bouton -->
+function changeState(x){
+let boutons = document.querySelectorAll(".bouton");
+let audio = document.querySelector("#zic");
+for(let i =0; i<boutons.length; i++){
+boutons[i].classList.remove("active");
+}
+boutons[x].classList.add("active");
+if(x == 0){
+audio.play();
+}
+if(x == 1){
+audio.pause();
+}
+if(x == 2){
+audio.pause();
+audio.currentTime = 0;
+}
+}
+</script></div>
+
+<br><img src="https://thumbs.dreamstime.com/b/livre-ouvert-8183937.jpg" width="25%" height="25%">
+<img src="https://static.vecteezy.com/ti/vecteur-libre/p1/6274328-instrument-de-musique-avec-notes-de-musique-sur-fond-blanc-gratuit-vectoriel.jpg" width="25%" height="25%">
+	
+</body>
+
+</html>
